@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clarick John S. Cascaño — Adventurer Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ui-vignette" aria-hidden="true"></div>
+  <div id="cinematic-flash" class="cinematic-flash" aria-hidden="true"></div>
+  <div id="enter-burst" class="enter-burst" aria-hidden="true"></div>
+  <canvas id="canvas-bg"></canvas>
+
+  <!-- Title Screen -->
+  <div id="start-screen">
+    <div class="entrance-audio-ui">
+      <button id="btn-music" class="music-btn" type="button" aria-pressed="false" aria-label="Play entrance theme">
+        <span class="music-icon music-icon--off" aria-hidden="true">♪</span>
+        <span class="music-icon music-icon--on" aria-hidden="true">
+          <span class="eq-bar"></span><span class="eq-bar"></span><span class="eq-bar"></span>
+        </span>
+        <span class="music-btn-label">Theme</span>
+      </button>
+      <p id="music-hint" class="music-hint">Tap Theme or anywhere to play the entrance song</p>
+    </div>
+    <div class="start-frame">
+      <div class="frame-corner frame-corner--tl"></div>
+      <div class="frame-corner frame-corner--tr"></div>
+      <div class="frame-corner frame-corner--bl"></div>
+      <div class="frame-corner frame-corner--br"></div>
+      <div class="start-shimmer" aria-hidden="true"></div>
+      <div class="logo-box">
+        <p class="start-eyebrow intro-piece">Adventurer Handbook</p>
+        <h1 class="title intro-piece">TRAVELER'S LOG</h1>
+        <div class="title-divider intro-piece"><span></span></div>
+        <p class="subtitle intro-piece">Clarick John S. Cascaño</p>
+        <p class="start-tagline intro-piece">BSIT · Northern Samar Colleges · OJT Applicant</p>
+      </div>
+      <button id="btn-start" class="genshin-btn intro-piece" type="button">
+        <span class="btn-gem" aria-hidden="true"></span>
+        PRESS START
+      </button>
+      <p class="start-hint intro-piece">Press Start when you are ready, Traveler</p>
+    </div>
+  </div>
+
+  <!-- Main Interface -->
+  <main id="main-ui" class="hidden">
+    <header class="top-bar">
+      <button id="btn-back" class="back-btn" type="button" aria-label="Return to title screen">
+        <svg class="back-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <path fill="currentColor" d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+        </svg>
+        <span>Back</span>
+      </button>
+      <div class="top-bar-center">
+        <span class="top-bar-label">Character Archive</span>
+      </div>
+      <div class="uid-badge">
+        <span class="uid-label">UID</span>
+        <span class="uid-value">082205</span>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <nav class="curved-menu" aria-label="Resume sections">
+        <p class="menu-heading">Menu</p>
+        <ul>
+          <li class="menu-item active" data-target="profile">
+            <span class="menu-accent" aria-hidden="true"></span>
+            <img src="images/anemo.png" alt="" class="element-icon" onerror="this.style.display='none'" />
+            <span class="menu-label">Character</span>
+          </li>
+          <li class="menu-item" data-target="talents">
+            <span class="menu-accent" aria-hidden="true"></span>
+            <img src="images/pyro.png" alt="" class="element-icon" onerror="this.style.display='none'" />
+            <span class="menu-label">Talents</span>
+          </li>
+          <li class="menu-item" data-target="quests">
+            <span class="menu-accent" aria-hidden="true"></span>
+            <img src="images/electro.png" alt="" class="element-icon" onerror="this.style.display='none'" />
+            <span class="menu-label">Quest Log</span>
+          </li>
+          <li class="menu-item" data-target="education">
+            <span class="menu-accent" aria-hidden="true"></span>
+            <img src="images/hydro.png" alt="" class="element-icon" onerror="this.style.display='none'" />
+            <span class="menu-label">Chronicles</span>
+          </li>
+          <li class="menu-item" data-target="attributes">
+            <span class="menu-accent" aria-hidden="true"></span>
+            <img src="images/geo.png" alt="" class="element-icon" onerror="this.style.display='none'" />
+            <span class="menu-label">Attributes</span>
+          </li>
+          <li class="menu-item" data-target="wish">
+            <span class="menu-accent" aria-hidden="true"></span>
+            <img src="images/dendro.png" alt="" class="element-icon" onerror="this.style.display='none'" />
+            <span class="menu-label">Contact</span>
+          </li>
+        </ul>
+      </nav>
+
+      <section id="content-panel" class="glass-panel">
+        <div class="panel-shimmer" aria-hidden="true"></div>
+        <div class="panel-header">
+          <h2 id="panel-title" class="panel-title">Character Overview</h2>
+          <div id="panel-header-line" class="panel-header-line" aria-hidden="true"></div>
+        </div>
+        <div id="panel-body" class="panel-body"></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
